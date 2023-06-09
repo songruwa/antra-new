@@ -1,0 +1,7 @@
+<div *ngFor="let user of userInfo" class="userClass">
+  <div style="display: flex; align-items: center;">
+    <img src={{user.avatar}} alt="">
+    <p>{{user.first_name}} {{user.last_name}} |</p>
+  </div>
+  <p>{{user.email}}</p>
+</div>
