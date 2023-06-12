@@ -1,0 +1,19 @@
+.userClass {
+    display: flex;
+    align-items: start;
+    gap: 20px; 
+    margin-bottom: 20px;
+    width: 80%;
+    background-color: rgb(219, 211, 211);
+  }
+  
+  .userClass img {
+    width: 100px;
+    height: 100px; 
+  }
+  
+  .userInfo {
+    display: flex;
+    flex-direction: column;
+  }
+  

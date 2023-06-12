@@ -1,0 +1,28 @@
+<div class="contact-input">
+    <h1>Contact us</h1>
+    <form [formGroup]="requiredForm" (ngSubmit)="onSubmit()" novalidate>
+        <p>Name:</p>
+        <input type="text" class="form-control" formControlName="name" required>
+        <div *ngIf="f['name'].invalid && (f['name'].dirty || f['name'].touched)" class="alert alert-danger">
+            <div *ngIf="f['name'].errors?.['required']">Name is required</div>
+            <div *ngIf="f['name'].errors?.['pattern']">Name should be one from the list</div>
+        </div>
+
+        <p>Message:</p>
+        <input type="text" formControlName="message">
+        <div *ngIf="f['message'].invalid && (f['message'].dirty || f['message'].touched)" class="alert alert-danger">
+            <div *ngIf="f['message'].errors?.['required']">Message is required</div>
+            <div *ngIf="f['message'].errors?.['minlength']">Message should be at least 10 characters long</div>
+        </div>
+
+        <input type="submit" value="Send Message" [disabled]="requiredForm.invalid" class="submitButton">
+    </form>
+
+    <div *ngIf="submitted && requiredForm.valid">
+        <h2>Thank you for contacting us. We will be in touch shortly</h2>
+        <hr>
+        <h3>You have submitted the following message:</h3>
+        <p>Name: {{ submittedData?.name }}</p>
+        <p>Message: {{ submittedData?.message }}</p>
+    </div>
+</div>

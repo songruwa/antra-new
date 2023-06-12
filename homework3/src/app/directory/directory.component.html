@@ -1,0 +1,9 @@
+<h1>CVS Users</h1>
+
+<div class="userClass" *ngFor="let e of employee_info">
+  <img [src]="e.avatar" alt="User Avatar">
+  <div class="userInfo">
+    <p>{{e.first_name}} {{e.last_name}}</p>
+    <p><a href="mailto:{{e.email}}">{{e.email}}</a></p>
+  </div>
+</div>
